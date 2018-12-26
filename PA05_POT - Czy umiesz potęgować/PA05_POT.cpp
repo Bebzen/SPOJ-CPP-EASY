@@ -2,19 +2,25 @@
 using namespace std;
 int main()
 {
-    int t,n,a,suma=0;
-    cin>>t;
-    for (int i=0;i<t;i++)
-    {
-        cin>>n;
-        for (int j=0;j<n;j++)
+    int koncowki[10][4] = {
+        {0,0,0,0},
+        {1,1,1,1},
+        {6,2,4,8},
+        {1,3,9,7},
+        {6,4,6,4},
+        {5,5,5,5},
+        {6,6,6,6},
+        {1,7,9,3},
+        {6,8,4,2},
+        {1,9,1,9}};
+        int x;
+        cin>>x;
+        int a,b;
+        for (int i=0;i<x;i++)
         {
-            cin>>a;
-            suma=suma+a;
+            cin>>a>>b;
+            cout<<koncowki[a%10][b%4]<<endl;
         }
-        cout<<suma<<endl;
-        suma=0;
-    }
-    return 0;
-}
 
+        return 0;
+}
