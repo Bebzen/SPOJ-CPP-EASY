@@ -1,31 +1,23 @@
 #include <iostream>
-#include <string>
-#include <cstdlib>
-#include <algorithm>
 using namespace std;
 
 int main()
 {
-    int t;
+    int t,b,licznik=1;
+    string a;
     cin>>t;
-    int a,b,c;
-    int licznik=0;
-    string tekst,tekst2;
+    char zapisany;
     for (int i=0;i<t;i++)
     {
-        licznik=0;
-        cin>>tekst;
-        do
+        cin>>a;
+        b=a.length();
+        for (int j=0;j<b;j++)
         {
-            tekst2=tekst;
-            reverse(tekst2.begin(),tekst2.end());
-            a=atoi(tekst.c_str());
-            b=atoi(tekst2.c_str());
-            if (a==b) break;
-            licznik++;
-            a=a+b;
-            tekst=to_string(a);
-        } while(true);
-        cout<<a<<" "<<licznik<<endl;
+            if (a[j]==a[j+1]) {licznik++; zapisany=a[j];}
+            else if(a[j]!=a[j+1]) { if (licznik>=3) {cout<<a[j]<<licznik; licznik=1;}
+                                    else if (licznik==2) {cout<<a[j]<<a[j]; licznik=1;}
+                                    else {cout<<a[j]; licznik=1;}}
+        }
+        cout<<endl;
     }
 }
