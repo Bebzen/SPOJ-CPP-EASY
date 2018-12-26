@@ -28,4 +28,5 @@ int main()
         } while(true);
         cout<<a<<" "<<licznik<<endl;
     }
+    return 0;
 }
